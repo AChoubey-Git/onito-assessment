@@ -1,11 +1,9 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { DataSource } from 'typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { MovieModule } from './modules/movie/movie.module';
-import { RatingModule } from './modules/rating/rating.module';
+import { UserModule } from './modules/user/user.module';
 import configuration from './config/configuration';
 
 @Module({
@@ -20,8 +18,7 @@ import configuration from './config/configuration';
         configService.get('databaseConfig'),
       inject: [ConfigService],
     }),
-    MovieModule,
-    RatingModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],

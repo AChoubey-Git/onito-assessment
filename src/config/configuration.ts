@@ -10,5 +10,7 @@ export default () => ({
     entities: [],
     synchronize: true,
     autoLoadEntities: true
-  }
+  },
+  JWT_SECRET: process.env.JWT_SECRET,
+  API_JWT_SECRET: process.env.API_JWT_SECRET,
 });
